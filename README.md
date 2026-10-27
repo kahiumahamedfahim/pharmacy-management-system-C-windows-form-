@@ -32,7 +32,7 @@ The application provides role-based entry points for pharmacy administration and
 | Runtime | .NET Framework 4.8 |
 | Database | Microsoft SQL Server / SQL Server Express |
 | Data access | ADO.NET (`System.Data.SqlClient`) |
-| Project | Visual Studio solution included in the source archive |
+| Project | Visual Studio solution in `source/` |
 
 ## Get started
 
@@ -45,18 +45,17 @@ The application provides role-based entry points for pharmacy administration and
 
 ### Set up the database
 
-1. Create or select a SQL Server instance that your Windows account can access.
+1. Start a SQL Server instance that your Windows account can access. The configured default is `.\SQLEXPRESS` (local SQL Server Express).
 2. Open [`database.sql`](database.sql) in SSMS and review the database file locations near the beginning of the script. Change them to paths that exist on your machine, or adjust the database creation step to match your SQL Server setup.
 3. Execute the script to create the `pharmacy managment system` database and its tables.
 
 ### Open the application
 
-1. Extract [source archive](<finalProject(pharmacy managment system).zip>) to a working folder.
-2. In the extracted `finalProject(pharmacy managment system)` directory, open `finalProject(pharmacy managment system).sln` in Visual Studio.
-3. Update the SQL Server connection settings in `App.config` **and** `DataAccess.cs` to use your local instance and database. Do not commit credentials.
-4. Build and run the solution from Visual Studio.
+1. Open `source/finalProject(pharmacy managment system).sln` in Visual Studio. The extracted source is included in this repository.
+2. The project uses Windows authentication and defaults to `.\SQLEXPRESS`. If your SQL Server instance has a different name, update the connection string in `source/App.config`.
+3. Build and run the solution from Visual Studio.
 
-> The bundled project is configured for a particular developer machine. A local SQL Server connection must be set up before the application can access data.
+> On the workstation where this project was configured, a local development administrator is already seeded in the database. A fresh database needs a user row in `UserInfo` before you can sign in.
 
 ## Database tables
 
@@ -72,14 +71,15 @@ The supplied SQL script defines four application tables:
 ```text
 .
 ├── database.sql
-├── finalProject(pharmacy managment system).zip  # Visual Studio source and project files
+├── source/                                       # Visual Studio solution and C# source
+├── finalProject(pharmacy managment system).zip  # Original project archive
 └── assets/
     └── pharmacy-workspace.svg                    # README showcase illustration
 ```
 
 ## Security and project status
 
-This is a learning project and needs security work before real-world use. The bundled implementation stores account passwords as plain text and includes machine-specific database connection settings. Replace any existing database credentials, use a least-privilege SQL account, and avoid committing secrets. Some database operations build SQL from input strings; parameterized queries should be used consistently before handling real data.
+This is a learning project and needs security work before real-world use. The application stores account passwords as plain text, and some database operations build SQL from input strings. Use the extracted `source/` solution, which uses local Windows authentication, rather than relying on machine-specific settings in the original archive. Rotate any database credential that was used outside a local demo, use least-privilege access, and parameterize SQL before handling real data.
 
 ## License
 
