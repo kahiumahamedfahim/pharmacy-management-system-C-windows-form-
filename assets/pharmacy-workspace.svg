@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Pharmacy Management System — product workspace concept</title>
+<desc id="desc">A polished desktop inventory and sales workspace concept with stock cards, product rows and a compact navigation sidebar.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071c20"/><stop offset="1" stop-color="#102d32"/></linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9f5d0"/><stop offset="1" stop-color="#61c7a1"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#001211" flood-opacity=".3"/></filter>
+  <style>
+    .sans{font-family:Inter,Segoe UI,Arial,sans-serif}.muted{fill:#8fa9a5}.ink{fill:#172b2b}.soft{fill:#f4f8f5}.white{fill:#fff}
+  </style>
+</defs>
+<rect width="1600" height="900" rx="34" fill="url(#bg)"/>
+<circle cx="1420" cy="94" r="210" fill="#3fae84" opacity=".10"/><circle cx="150" cy="840" r="260" fill="#59c9a4" opacity=".06"/>
+<text x="84" y="108" class="sans" fill="#a7e8cc" font-size="15" font-weight="700" letter-spacing="3">PHARMACY MANAGEMENT SYSTEM</text>
+<text x="84" y="190" class="sans white" font-size="45" font-weight="700">A clearer view of your</text><text x="84" y="246" class="sans white" font-size="45" font-weight="700">pharmacy operations.</text>
+<text x="86" y="290" class="sans muted" font-size="18">Inventory, checkout and sales history in one desktop workflow.</text>
+<rect x="84" y="322" width="184" height="38" rx="19" fill="#183c38"/><circle cx="106" cy="341" r="5" fill="#8ee0b6"/><text x="122" y="347" class="sans" fill="#d2f3df" font-size="13" font-weight="600">C# · Windows Forms</text>
+<rect x="280" y="322" width="148" height="38" rx="19" fill="#183c38"/><text x="304" y="347" class="sans" fill="#d2f3df" font-size="13" font-weight="600">SQL Server</text>
+<rect x="440" y="322" width="176" height="38" rx="19" fill="#183c38"/><text x="465" y="347" class="sans" fill="#d2f3df" font-size="13" font-weight="600">.NET Framework 4.8</text>
+<g filter="url(#shadow)">
+<rect x="82" y="400" width="1436" height="430" rx="22" fill="#f3f7f4"/>
+<rect x="82" y="400" width="230" height="430" rx="22" fill="#102c2d"/><rect x="290" y="400" width="22" height="430" fill="#102c2d"/>
+<rect x="108" y="426" width="38" height="38" rx="12" fill="url(#glow)"/><path d="M119 445h16m-8-8v16" stroke="#12302b" stroke-width="3" stroke-linecap="round"/>
+<text x="157" y="443" class="sans white" font-size="14" font-weight="700">MediStock</text><text x="157" y="461" class="sans" fill="#8fa9a5" font-size="10">PHARMACY DESK</text>
+<text x="108" y="510" class="sans" fill="#6d8984" font-size="10" font-weight="700" letter-spacing="1.3">WORKSPACE</text>
+<rect x="100" y="526" width="194" height="42" rx="10" fill="#1b4540"/><rect x="100" y="526" width="3" height="42" rx="1.5" fill="#8ee0b6"/><text x="122" y="552" class="sans" fill="#c7f0db" font-size="13" font-weight="600">◫   Overview</text>
+<text x="122" y="598" class="sans" fill="#b1c3bf" font-size="13">▤   Products</text><text x="122" y="640" class="sans" fill="#b1c3bf" font-size="13">＋   New sale</text><text x="122" y="682" class="sans" fill="#b1c3bf" font-size="13">▧   Sales history</text>
+<line x1="108" y1="716" x2="286" y2="716" stroke="#294743"/><circle cx="125" cy="757" r="16" fill="#285850"/><text x="119" y="762" class="sans" fill="#d0f4df" font-size="11" font-weight="700">AM</text><text x="151" y="754" class="sans white" font-size="12" font-weight="600">Admin account</text><text x="151" y="771" class="sans" fill="#829d98" font-size="10">Store manager</text>
+<text x="348" y="454" class="sans ink" font-size="21" font-weight="700">Good morning, team</text><text x="348" y="479" class="sans" fill="#71827d" font-size="12">A quick look at your inventory and today’s activity.</text>
+<rect x="1320" y="430" width="165" height="38" rx="9" fill="#fff" stroke="#dfe8e2"/><circle cx="1340" cy="449" r="4" fill="#42a77c"/><text x="1353" y="453" class="sans" fill="#405a53" font-size="11">Database connected</text>
+<g><rect x="348" y="508" width="350" height="112" rx="14" fill="#fff" stroke="#e3ebe6"/><rect x="716" y="508" width="350" height="112" rx="14" fill="#fff" stroke="#e3ebe6"/><rect x="1084" y="508" width="400" height="112" rx="14" fill="#fff" stroke="#e3ebe6"/>
+<text x="372" y="542" class="sans" fill="#758680" font-size="12">PRODUCTS IN CATALOG</text><text x="372" y="584" class="sans ink" font-size="29" font-weight="700">1,248</text><text x="596" y="584" class="sans" fill="#439776" font-size="11">↗ in stock</text>
+<text x="740" y="542" class="sans" fill="#758680" font-size="12">LOW STOCK ITEMS</text><text x="740" y="584" class="sans ink" font-size="29" font-weight="700">08</text><text x="946" y="584" class="sans" fill="#d2943f" font-size="11">Review soon</text>
+<text x="1108" y="542" class="sans" fill="#758680" font-size="12">TODAY’S SALES</text><text x="1108" y="584" class="sans ink" font-size="29" font-weight="700">৳ 18,450</text><text x="1320" y="584" class="sans" fill="#439776" font-size="11">Sales summary</text></g>
+<text x="348" y="665" class="sans ink" font-size="15" font-weight="700">Product inventory</text><text x="348" y="688" class="sans" fill="#71827d" font-size="11">A product list ready for everyday stock management.</text>
+<rect x="1282" y="642" width="202" height="36" rx="9" fill="#163d36"/><text x="1310" y="665" class="sans white" font-size="11" font-weight="600">＋   Add a product</text>
+<rect x="348" y="707" width="1136" height="36" rx="7" fill="#edf3ef"/><text x="370" y="730" class="sans" fill="#70837c" font-size="10" font-weight="700">PRODUCT</text><text x="730" y="730" class="sans" fill="#70837c" font-size="10" font-weight="700">CATEGORY</text><text x="995" y="730" class="sans" fill="#70837c" font-size="10" font-weight="700">STOCK</text><text x="1190" y="730" class="sans" fill="#70837c" font-size="10" font-weight="700">UNIT PRICE</text><text x="1380" y="730" class="sans" fill="#70837c" font-size="10" font-weight="700">STATUS</text>
+<text x="370" y="773" class="sans ink" font-size="12" font-weight="600">Paracetamol 500 mg</text><text x="730" y="773" class="sans" fill="#60746e" font-size="11">Pain relief</text><text x="995" y="773" class="sans ink" font-size="11">124 units</text><text x="1190" y="773" class="sans ink" font-size="11">৳ 2.50</text><rect x="1373" y="756" width="81" height="24" rx="12" fill="#e2f5e9"/><text x="1388" y="772" class="sans" fill="#39805f" font-size="10" font-weight="600">In stock</text>
+<line x1="348" y1="792" x2="1484" y2="792" stroke="#e7ede9"/><text x="370" y="814" class="sans" fill="#71827d" font-size="11">Vitamin C 1000 mg</text><text x="730" y="814" class="sans" fill="#60746e" font-size="11">Vitamins</text><text x="995" y="814" class="sans ink" font-size="11">36 units</text><text x="1190" y="814" class="sans ink" font-size="11">৳ 8.00</text><rect x="1373" y="797" width="81" height="24" rx="12" fill="#e2f5e9"/><text x="1388" y="813" class="sans" fill="#39805f" font-size="10" font-weight="600">In stock</text>
+</g>
+<text x="84" y="866" class="sans" fill="#78938e" font-size="11">PROJECT SHOWCASE · illustrative interface concept · not a live application screenshot</text>
+</svg>
