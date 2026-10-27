@@ -2,85 +2,92 @@
 
 # Pharmacy Management System
 
-**A desktop application for managing pharmacy products, users, checkout, and sales records.**
+**A Windows desktop application for pharmacy administration, inventory, and checkout.**
 
-Built with **C# · Windows Forms · .NET Framework 4.8 · SQL Server**
-
-![Project showcase: pharmacy inventory and sales workspace concept](assets/pharmacy-workspace.svg)
-
-*Project showcase illustration. It presents the product workflow; it is not a screenshot of the current application UI.*
+C# · Windows Forms · .NET Framework 4.8 · SQL Server
 
 </div>
 
----
+## Screenshots
 
-## What it does
+The screens below are taken from the project report.
 
-The application provides role-based entry points for pharmacy administration and day-to-day sales work.
+| Login | Administrator workspace |
+|:---:|:---:|
+| ![Pharmacy application login screen](assets/screenshots/login.jpg) | ![Administrator home screen](assets/screenshots/admin-workspace.jpg) |
+| Product management | Manager checkout |
+| ![Product inventory management screen](assets/screenshots/product-management.jpg) | ![Manager sales and checkout screen](assets/screenshots/checkout.jpg) |
 
-- **Product inventory** — add, search, edit, and remove products, including company, quantity, and price.
-- **Checkout** — find products, build a bill, enter customer details, calculate totals, and reduce stock after a sale.
-- **Sales history** — review saved customer and bill records.
-- **User administration** — add, search, update, and remove user records, with Admin and Manager roles.
-- **SQL Server storage** — stores users, products, bill line items, and completed sale records.
+## Overview
+
+The project is a role-based pharmacy management application built as a Windows Forms desktop program. Administrators can manage users and products and review saved sales. Managers can work with the product list, prepare a bill, and complete a sale.
+
+### Included workflows
+
+- **Sign-in:** routes Admin and Manager accounts to their respective workspaces.
+- **User management:** add, search, edit, and remove user records, including their assigned role.
+- **Product management:** add, search, update, and remove products with company, stock quantity, and price.
+- **Checkout:** select products, set quantities, calculate line and bill totals, and save customer and bill details.
+- **Sales history:** browse saved customer and bill records.
+- **Stock updates:** subtract sold quantities from product inventory when a sale is completed.
 
 ## Technology
 
-| Area | Stack |
+| Area | Technology |
 | --- | --- |
-| Desktop UI | C# Windows Forms |
+| User interface | C# Windows Forms |
 | Runtime | .NET Framework 4.8 |
 | Database | Microsoft SQL Server / SQL Server Express |
 | Data access | ADO.NET (`System.Data.SqlClient`) |
-| Project | Visual Studio solution in `source/` |
+| IDE | Visual Studio 2022 or compatible Visual Studio version |
 
-## Get started
+## Run locally
 
 ### Requirements
 
-- Windows
-- Visual Studio with the **.NET desktop development** workload
+- Windows and Visual Studio with the **.NET desktop development** workload
 - .NET Framework 4.8 targeting pack
-- SQL Server or SQL Server Express, plus SQL Server Management Studio (SSMS) or another SQL script runner
+- SQL Server or SQL Server Express
+- SQL Server Management Studio (SSMS) or another SQL script runner
 
-### Set up the database
+### 1. Create the database
 
-1. Start a SQL Server instance that your Windows account can access. The configured default is `.\SQLEXPRESS` (local SQL Server Express).
-2. Open [`database.sql`](database.sql) in SSMS and review the database file locations near the beginning of the script. Change them to paths that exist on your machine, or adjust the database creation step to match your SQL Server setup.
-3. Execute the script to create the `pharmacy managment system` database and its tables.
+1. Start a local SQL Server Express instance. The included app configuration defaults to `.\SQLEXPRESS`.
+2. Open [`database.sql`](database.sql) in SSMS. Review the MDF/LDF paths near the start of the script and adjust them if they do not exist on your machine.
+3. Run the script to create the `pharmacy managment system` database and its tables.
 
-### Open the application
+### 2. Open and build the app
 
-1. Open `source/finalProject(pharmacy managment system).sln` in Visual Studio. The extracted source is included in this repository.
-2. The project uses Windows authentication and defaults to `.\SQLEXPRESS`. If your SQL Server instance has a different name, update the connection string in `source/App.config`.
-3. Build and run the solution from Visual Studio.
+1. Open [`source/finalProject(pharmacy managment system).sln`](<source/finalProject(pharmacy managment system).sln>) in Visual Studio.
+2. The extracted project uses Windows authentication and connects to `SQLEXPRESS` on the local machine. If your instance uses a different name, update the connection string in [`source/App.config`](source/App.config).
+3. Build and run the solution.
+4. Before signing in to a fresh database, create an Admin or Manager row in `dbo.UserInfo` using SSMS. The current local development database has a separate demo Admin account; its credentials are not stored in this repository.
 
-> On the workstation where this project was configured, a local development administrator is already seeded in the database. A fresh database needs a user row in `UserInfo` before you can sign in.
+## Database
 
-## Database tables
+The supplied SQL script creates these application tables:
 
-The supplied SQL script defines four application tables:
+- `UserInfo` — user profile, credentials, and role.
+- `Product` — product name, company, quantity, and price.
+- `Bilinginfo` — items staged for a bill.
+- `Billhold` — customer, date, and completed bill total.
 
-- `Product` — product name, company, quantity, and unit price.
-- `UserInfo` — user profile, user ID, password, and role.
-- `Bilinginfo` — line items staged for checkout.
-- `Billhold` — customer details, date, and completed bill total.
+The report includes an ER diagram and a normalized design discussion. The SQL script is the authoritative reference for the schema used by the application.
+
+![Entity relationship diagram from the project report](assets/diagrams/er-diagram.jpg)
 
 ## Project layout
 
 ```text
 .
-├── database.sql
-├── source/                                       # Visual Studio solution and C# source
-├── finalProject(pharmacy managment system).zip  # Original project archive
-└── assets/
-    └── pharmacy-workspace.svg                    # README showcase illustration
+├── assets/
+│   ├── diagrams/              # ER diagram from the project report
+│   └── screenshots/           # Selected application screenshots from the report
+├── database.sql               # SQL Server schema setup
+├── source/                    # Visual Studio solution and C# source
+└── finalProject(pharmacy managment system).zip  # Original project archive
 ```
 
-## Security and project status
+## Security notes
 
-This is a learning project and needs security work before real-world use. The application stores account passwords as plain text, and some database operations build SQL from input strings. Use the extracted `source/` solution, which uses local Windows authentication, rather than relying on machine-specific settings in the original archive. Rotate any database credential that was used outside a local demo, use least-privilege access, and parameterize SQL before handling real data.
-
-## License
-
-No license file is currently included. Contact the repository owner before redistributing or using this project beyond the rights granted by the applicable law.
+This is an academic/demo project and is not ready for production use. The current schema stores account passwords as plain text, and some CRUD queries concatenate user input into SQL. Use only local demo data, do not reuse real passwords, and parameterize all queries and hash passwords before using real accounts or customer information.
